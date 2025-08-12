@@ -1,0 +1,250 @@
+/* Hotel Tabs Component Styles */
+
+/* Tab Navigation */
+.custom-tabs {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    scrollbar-width: thin;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.custom-tabs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.custom-tabs::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.custom-tabs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.tab-btn {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #6c757d;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tab-btn.active {
+    background-color: #dc3545;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* Tab Content */
+.tab-content-custom {
+    display: none;
+}
+
+.tab-content-custom.active {
+    display: block;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 180px;
+    }
+
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .col-md-3,
+    .col-md-4,
+    .col-md-6 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-tabs {
+        padding: 8px 0;
+    }
+
+    .tab-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    .card-img-top {
+        height: 160px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 13px;
+    }
+}
+
+/* For extremely small screens */
+@media (max-width: 350px) {
+    .tab-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 180px;
+    }
+
+    code .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .col-md-3,
+    .col-md-4,
+    .col-md-6 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-tabs {
+        padding: 8px 0;
+    }
+
+    code .tab-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    .card-img-top {
+        height: 160px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 13px;
+    }
+}
+
+/* Nearby attraction tab*/
+
+.attractions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.attraction-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.attraction-card:nth-child(1) {
+    grid-column: span 2;
+}
+
+.attraction-card:nth-child(2),
+.attraction-card:nth-child(3) {
+    grid-column: span 1;
+}
+
+.attraction-card:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attraction-details {
+    padding: 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.location-label {
+    display: block;
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}

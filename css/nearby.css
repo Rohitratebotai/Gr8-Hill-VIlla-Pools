@@ -1,0 +1,194 @@
+/* Container for all cards */
+.nearby-places-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Individual card */
+.place-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 16px;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternate layout for even cards */
+.place-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Card image wrapper */
+.place-image {
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.place-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text content inside card */
+.place-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.place-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.place-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.view-more-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #FEA116;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background-color: #FEA116;
+}
+
+/* ---------- Responsive Layout ---------- */
+@media (max-width: 768px) {
+  .place-card,
+  .place-card.reverse {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .place-image {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .place-image img {
+    height: auto;
+  }
+
+  .place-content {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ---------- Popup Section ---------- */
+.popup-section {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1000px;
+  height: 70%; /* Reduced height */
+  max-height: 700px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.popup-map {
+  flex: 1;
+  height: 100%;
+}
+
+.popup-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.popup-info {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+.popup-info img {
+  width: 100%;
+  height: 250px; /* Fixed image height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.popup-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.popup-info p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.close-btn1 {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  background: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Popup responsive */
+@media (max-width: 768px) {
+  .popup-content {
+    flex-direction: column;
+    height: 80%;
+  }
+
+  .popup-map {
+    height: 200px;
+  }
+
+  .popup-info img {
+    height: 200px;
+  }
+}
