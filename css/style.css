@@ -625,7 +625,7 @@
 }
 
 .logo-img {
-    width: 220px;
+    width: 80px;
     height: auto;
     object-fit: contain;
     max-height: 70px;
@@ -633,7 +633,7 @@
 
 @media (max-width: 992px) {
     .logo-img {
-        width: 250px;
+        width: 80px;
         max-height: 200px;
     }
 
@@ -653,7 +653,7 @@
 
 @media (max-width: 576px) {
     .logo-img {
-        width: 220px;
+        width: 70px;
         max-height: 200px;
     }
 
@@ -661,3 +661,4 @@
         min-height: 100px;
     }
 }
+

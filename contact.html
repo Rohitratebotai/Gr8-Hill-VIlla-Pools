@@ -32,9 +32,74 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+
+  <style>
+    .floating-btn {
+      position: fixed;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 9999;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      /* pill shape */
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+
+      /* High-contrast base color visible on both black & white backgrounds */
+      background: #0b84ff;
+      /* bright blue (visible on light & dark) */
+      color: #ffffff;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(11, 132, 255, 0.18), 0 2px 6px rgba(0, 0, 0, 0.12);
+      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .floating-btn:focus {
+      outline: 3px solid rgba(11, 132, 255, 0.25);
+      outline-offset: 2px;
+    }
+
+    .floating-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(11, 132, 255, 0.22), 0 4px 10px rgba(0, 0, 0, 0.14);
+    }
+
+    /* In case you want a light-mode variant (e.g., for very bright sites) */
+    .floating-btn.light-variant {
+      background: #ffffff;
+      color: #0b84ff;
+      border-color: rgba(11, 132, 255, 0.12);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Larger touch target on small screens */
+    @media (max-width: 480px) {
+      .floating-btn {
+        left: 0.6rem;
+        bottom: 0.6rem;
+        padding: 0.9rem 1.1rem;
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Floating "Book Now" button (bottom-left). href="#" -> replace with your booking URL -->
+  <a href="https://booking.gr8hillpoolvillas.com/hotel/hotel-details?hotel_id=138" target="_blank"
+    rel="noopener noreferrer" class="floating-btn" aria-label="Book Now">
+    Book Now
+  </a>
   <div class="bg-white p-0">
     <!-- Spinner Start -->
     <div id="spinner"
@@ -261,11 +326,10 @@
             </h6>
             <p class="mb-2">
               <i class="fa fa-map-marker-alt me-3"></i>
-              <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.1672555524365!2d73.81805397467095!3d19.318547244314423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd6dd04dbfb14d%3A0xb45f0fc3a3685671!2sGR8%20HILL%20POOL%20VILLAS!5e0!3m2!1sen!2sin!4v1754654991717!5m2!1sen!2sin"
-                target="_blank" rel="noopener noreferrer" style="color: white;">
+              <span style="color: white; cursor: pointer;">
                 GR8 HILL POOL VILLAS, GR8, Karanjale, Maharashtra, <br />
                 Malshej Ghat, India
-              </a>
+              </span>
             </p>
 
             <p class="mb-2">
